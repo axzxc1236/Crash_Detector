@@ -121,6 +121,6 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+        MsgBox("Crash detector - A program help you to solve crash problems" & vbCrLf & "    Copyright (C) 2014  21(21999125、x21999125x、axzxc1236)" & vbCrLf & vbCrLf & "    This program is free software: you can redistribute it and/or modify" & vbCrLf & "    it under the terms of the GNU General Public License as published by" & vbCrLf & "    the Free Software Foundation, either version 3 of the License, or" & vbCrLf & "    (at your option) any later version." & vbCrLf & vbCrLf & "    This program is distributed in the hope that it will be useful," & vbCrLf & "    but WITHOUT ANY WARRANTY; without even the implied warranty of" & vbCrLf & "    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" & vbCrLf & "    GNU General Public License for more details." & vbCrLf & vbCrLf & "    You should have received a copy of the GNU General Public License" & vbCrLf & "    along with this program.  If not, see <http://www.gnu.org/licenses/>.")
     End Sub
 End Class
