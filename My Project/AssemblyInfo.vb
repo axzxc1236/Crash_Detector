@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' 檢閱組件屬性的值
 
 <Assembly: AssemblyTitle("Crash detector")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyDescription("GitHub repo : https://github.com/axzxc1236/Crash_Detector")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Crash detector")> 
 <Assembly: AssemblyCopyright("Copyright ©  2014")> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 指定為預設值: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("0.1.0.0")> 
+<Assembly: AssemblyFileVersion("0.1.0.0")> 
