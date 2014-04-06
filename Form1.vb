@@ -119,4 +119,8 @@ Public Class Form1
         WebBrowser1.DocumentText = "http://tny.cz/" & b(5)
         'MsgBox(b(5))
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+    End Sub
 End Class
