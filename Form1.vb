@@ -9,8 +9,6 @@ Public Class Form1
             Dim a As String = OpenFileDialog1.FileName
             Dim b As String
             b = My.Computer.FileSystem.ReadAllText(a)
-            'TextBox1.Text = b
-            'If b.Contains("") Then TextBox1.Text = ""
             If b.Contains("Bad Video Card Drivers") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
             If b.Contains("org.lwjgl.LWJGLException: Pixel format not accelerated") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
             If b.Contains("Fatal FML error") Then TextBox1.Text = "你可能在使用1.5.2版的Forge" & vbCrLf & "這篇文章可能有幫助" & vbCrLf & "http://bit.ly/1lyBCjh"
@@ -19,11 +17,8 @@ Public Class Form1
                 Dim lines = System.IO.File.ReadAllLines(a)
                 For i = 0 To lines.Length - 1
                     If lines(i).Contains("requires mods") Then
-                        'Dim c As String = Read_TextFile_Line(a, i + 1)
                         Dim c As String = lines(i)
                         Dim split As String() = c.Split(" ")
-                        'MsgBox(Split(6))
-                        'MsgBox(split(10).Substring(1, split(10).Length - 2))
                         TextBox1.Text = TextBox1.Text & split(6) & "模組需要" & split(10).Substring(1, split(10).Length - 2) & "模組才能使用" & vbCrLf
                     End If
                 Next
@@ -56,49 +51,7 @@ Public Class Form1
 
 
     End Sub
-
-    'Private Function Read_TextFile_Line(ByVal File As String, ByVal Line_Number As Long) As String
-
-    '    Dim Lines() As String = {String.Empty}
-    '    Dim Line_Length As Long = 0
-
-    '    Try
-    '        Lines = IO.File.ReadAllLines(File)
-    '        Line_Length = Lines.LongLength - 1
-    '        Return Lines(Line_Number - 1)
-
-    '    Catch ex As IO.FileNotFoundException
-    '        MessageBox.Show(String.Format("File not found: ""{0}""", _
-    '                                      File), _
-    '                        Nothing, _
-    '                        MessageBoxButtons.OK, _
-    '                        MessageBoxIcon.Error)
-
-    '    Catch ex As IndexOutOfRangeException
-    '        MessageBox.Show(String.Format("Attempted to read line {0}, but ""{1}"" has {2} lines.", _
-    '                                      Line_Number, _
-    '                                      File, _
-    '                                      Line_Length + 1), _
-    '                        Nothing, _
-    '                        MessageBoxButtons.OK, _
-    '                        MessageBoxIcon.Error)
-
-    '    Catch ex As Exception
-    '        Throw New Exception(String.Format("{0}: {1}", _
-    '                                          ex.Message, _
-    '                                          ex.StackTrace))
-
-    '    Finally
-    '        Lines = Nothing
-    '        Line_Length = Nothing
-
-    '    End Try
-
-    '    Return Nothing
-
-    'End Function
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+   Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             My.Computer.FileSystem.WriteAllText(Environment.CurrentDirectory & "\Crash-Detector\upload.bat", "cd Crash-Detector" & vbCrLf & "cd Crash-Detector" & vbCrLf & "curl -d lang=text --data-urlencode text@" & OpenFileDialog1.FileName & " https://cantbuyit.com/pastebin/api/create -k >123", False)
             Shell("cmd /c Crash-Detector\upload.bat", AppWinStyle.Hide, True)
