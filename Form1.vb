@@ -9,12 +9,18 @@ Public Class Form1
             Dim a As String = OpenFileDialog1.FileName
             Dim b As String
             b = My.Computer.FileSystem.ReadAllText(a)
+            Dim lines = System.IO.File.ReadAllLines(a)
+
+            'Dim mcver As String
+            'For i = 0 To lines.Length - 1
+
+            'Next
+
             If b.Contains("Bad Video Card Drivers") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
             If b.Contains("org.lwjgl.LWJGLException: Pixel format not accelerated") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
             If b.Contains("Fatal FML error") Then TextBox1.Text = "你可能在使用1.5.2版的Forge" & vbCrLf & "這篇文章可能有幫助" & vbCrLf & "http://bit.ly/1lyBCjh"
             If b.Contains("There was a fatal error starting up minecraft and FML") Then TextBox1.Text = "你可能在使用1.5.2版的Forge" & vbCrLf & "這篇文章可能有幫助" & vbCrLf & "http://bit.ly/1lyBCjh"
             If b.Contains("requires mods") Then
-                Dim lines = System.IO.File.ReadAllLines(a)
                 For i = 0 To lines.Length - 1
                     If lines(i).Contains("requires mods") Then
                         Dim c As String = lines(i)

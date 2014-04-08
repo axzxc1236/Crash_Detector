@@ -47,7 +47,7 @@ Partial Class Form1
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "請選取log檔案或Crash-Report"
-        Me.OpenFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+        Me.OpenFileDialog1.Filter = "文字檔案 (*.txt; *.log)|*.txt; *.log|所有檔案 (*.*)|*.*"
         Me.OpenFileDialog1.Title = "log檔、Crash-Report"
         '
         'Label1
