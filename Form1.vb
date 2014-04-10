@@ -74,4 +74,12 @@ Public Class Form1
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         My.Computer.Clipboard.SetText(TextBox2.Text)
     End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        If Not TextBox2.Text = "" Or TextBox2.Text.Contains("未知錯誤") Then
+            Button3.Enabled = True
+        Else
+            Button3.Enabled = False
+        End If
+    End Sub
 End Class

@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("GitHub repo : https://github.com/axzxc1236/Crash_Detector")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("Crash detector")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyCopyright("GitHub repo : https://github.com/axzxc1236/Crash_Detector")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
