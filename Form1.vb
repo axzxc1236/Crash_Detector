@@ -11,13 +11,8 @@ Public Class Form1
             b = My.Computer.FileSystem.ReadAllText(a)
             Dim lines = System.IO.File.ReadAllLines(a)
 
-            'Dim mcver As String
-            'For i = 0 To lines.Length - 1
-
-            'Next
-
-            If b.Contains("Bad Video Card Drivers") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
-            If b.Contains("org.lwjgl.LWJGLException: Pixel format not accelerated") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這先灌鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
+            If b.Contains("Bad Video Card Drivers") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這些關鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
+            If b.Contains("org.lwjgl.LWJGLException: Pixel format not accelerated") Then TextBox1.Text = "顯示卡可能不支援Minecraft或是驅動程式顯示卡太舊" & vbCrLf & "顯示卡:" & My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000", "DriverDesc", Nothing) & vbCrLf & "Google這些關鍵字可能會有幫助:" & vbCrLf & "顯示卡 驅動程式 更新"
             If b.Contains("Fatal FML error") Then TextBox1.Text = "你可能在使用1.5.2版的Forge" & vbCrLf & "這篇文章可能有幫助" & vbCrLf & "http://bit.ly/1lyBCjh"
             If b.Contains("There was a fatal error starting up minecraft and FML") Then TextBox1.Text = "你可能在使用1.5.2版的Forge" & vbCrLf & "這篇文章可能有幫助" & vbCrLf & "http://bit.ly/1lyBCjh"
             If b.Contains("requires mods") Then
@@ -41,7 +36,7 @@ Public Class Form1
             If b.Contains("java.lang.NoClassDefFoundError: IllegalName:") Then TextBox1.Text = TextBox1.Text & "核心模組不相容，你可能用Modloader去跑Forge的模組" & vbCrLf
             If b.Contains("duplicate file name:") Then TextBox1.Text = TextBox1.Text & "模組檔案重複" & vbCrLf
             If b.Contains("java.lang.IndexOutOfBoundsException: Index: 0, Size: 0") Then TextBox1.Text = TextBox1.Text & "推測為Optifine與其他模組的不相容(例如1.7.2的IC2)" & vbCrLf
-            'If b.Contains("") Then TextBox1.Text = ""
+            If b.Contains("A fatal error has been detected by the Java Runtime Environment:") Then TextBox1.Text = "這是Core dump，基本上應該不常出現，如果頻繁地出現你可以嘗試:" & vbCrLf & "1.刪除.minecraft(建議先備份)" & vbCrLf & "2.更新Java到最新的版本" & vbCrLf & vbCrLf & "如果以上的方法都幫不了你，我也不知道" & vbCrLf & "如果你有解決的好方法，請告訴開發者" & vbCrLf & "請不要上傳此崩潰紀錄"
             'If b.Contains("") Then TextBox1.Text = ""
             'If b.Contains("") Then TextBox1.Text = ""
             'If b.Contains("") Then TextBox1.Text = ""

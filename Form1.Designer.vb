@@ -39,7 +39,7 @@ Partial Class Form1
         '
         Me.Button1.Location = New System.Drawing.Point(13, 13)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(152, 23)
+        Me.Button1.Size = New System.Drawing.Size(178, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "選取log檔案或Crash-Report"
         Me.Button1.UseVisualStyleBackColor = True
@@ -74,9 +74,9 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(14, 157)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 12)
+        Me.Label2.Size = New System.Drawing.Size(143, 12)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "未收錄崩潰情形回報:"
+        Me.Label2.Text = "未收錄崩潰情形\誤判回報:"
         '
         'Label3
         '
@@ -116,7 +116,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(197, 13)
+        Me.Button4.Location = New System.Drawing.Point(200, 13)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 9
