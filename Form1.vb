@@ -1,4 +1,4 @@
-﻿Imports System.IO
+Imports System.IO
 Imports System.Text
 
 Public Class Form1
@@ -81,5 +81,9 @@ Public Class Form1
         Else
             Button3.Enabled = False
         End If
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Download.Hide()
     End Sub
 End Class
