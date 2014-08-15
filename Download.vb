@@ -10,7 +10,12 @@ Public Class Download
         If Not My.Computer.FileSystem.DirectoryExists(My.Computer.FileSystem.CurrentDirectory & "\Crash-Detector") Then My.Computer.FileSystem.CreateDirectory(My.Computer.FileSystem.CurrentDirectory & "\Crash-Detector")
         If Not My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\Crash-Detector\7za.exe") Then My.Computer.Network.DownloadFile("https://dl.dropboxusercontent.com/s/07mw2d3o2v8xkq2/7za.exe", Environment.CurrentDirectory & "\Crash-Detector\7za.exe", "", "", False, 100000, True)
         If Not My.Computer.FileSystem.FileExists(Environment.CurrentDirectory & "\Crash-Detector\curl.exe") Then
-            My.Computer.Network.DownloadFile("http://www.paehl.com/open_source/?download=curl_735_0_ssl.zip", Environment.CurrentDirectory & "\Crash-Detector\curl.zip", "", "", False, 100000, True)
+            Try
+                My.Computer.Network.DownloadFile("http://www.paehl.com/open_source/?download=curl_735_0_ssl.zip", Environment.CurrentDirectory & "\Crash-Detector\curl.zip", "", "", False, 100000, True)
+            Catch ex As Exception
+                MsgBox("請使用留言告知'Curl載點出現問題'" & vbCrLf & "已將錯誤通知複製起來，請用ctrl + v貼上在文章留言" & vbCrLf * "謝謝合作!")
+                End
+            End Try
             My.Computer.FileSystem.WriteAllText(Environment.CurrentDirectory & "\Crash-Detector\unzip.bat", "cd Crash-Detector" & vbCrLf & "cd Crash-Detector" & vbCrLf & "7za.exe e curl.zip", False)
 
             Shell("cmd /c Crash-Detector\unzip.bat", AppWinStyle.Hide, True)
