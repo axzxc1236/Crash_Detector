@@ -54,10 +54,10 @@ Public Class Form1
     End Sub
    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
-            My.Computer.FileSystem.WriteAllText(Environment.CurrentDirectory & "\Crash-Detector\upload.bat", "cd Crash-Detector" & vbCrLf & "cd Crash-Detector" & vbCrLf & "curl -d lang=text --data-urlencode text@" & OpenFileDialog1.FileName & " https://cantbuyit.com/pastebin/api/create -k >123", False)
+            Dim base64Str As String = System.Convert.ToBase64String(System.Text.UnicodeEncoding.Unicode.GetBytes(My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)))
+            My.Computer.FileSystem.WriteAllText(Environment.CurrentDirectory & "\Crash-Detector\upload.bat", "cd Crash-Detector" & vbCrLf & "cd Crash-Detector" & vbCrLf & "curl -k -d api_option=paste -d api_dev_key=42570b4fe1ad7118c7ce83bcd5d3c2a3 -d api_paste_code=" & base64Str & " http://pastebin.com/api/api_post.php >123", False)
             Shell("cmd /c Crash-Detector\upload.bat", AppWinStyle.Hide, True)
             TextBox2.Text = My.Computer.FileSystem.ReadAllText(Environment.CurrentDirectory & "\Crash-Detector\123")
-            If TextBox2.Text.Contains("Error: Missing paste text") Then TextBox2.Text = "未知錯誤"
         Else
             MsgBox("使用者取消動作(error code 1)", 16)
         End If
